@@ -19,7 +19,8 @@ import { ModificarLibroComponent } from './modificar-libro/modificar-libro.compo
     ModificarLibroComponent
   ],
   exports: [
-    ListadoLibrosComponent
+    ListadoLibrosComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
