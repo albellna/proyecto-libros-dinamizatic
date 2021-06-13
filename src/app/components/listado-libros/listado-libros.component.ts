@@ -48,12 +48,12 @@ export class ListadoLibrosComponent implements OnInit {
     this.router.navigate(['/libro', id]);
   }
 
-  public crearGrupo() {
+  public crearLibro() {
     this.router.navigate(['/crearlibro']);
   }
 
-  public borrarGrupo(id: string) {
-    if (confirm('¿Quieres borrar el grupo con ID '+id+'?')){
+  public borrarLibro(id: string) {
+    if (confirm('¿Quieres borrar el libro con ID '+id+'?')){
       this.librosService.borrarLibro(id).subscribe(data => {
         this.cargarLibros();
       });
