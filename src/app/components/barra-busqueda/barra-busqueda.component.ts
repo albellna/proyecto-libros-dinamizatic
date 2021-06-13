@@ -1,4 +1,5 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { LibrosService } from 'src/app/services/libros.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class BarraBusquedaComponent implements OnInit {
   @ViewChild('txtBuscar') txtBuscar!:ElementRef<HTMLInputElement>;
   @Output() resultadoBusqueda = new EventEmitter<any>();
   
-  constructor(private librosService: LibrosService) { }
+  constructor(private router: Router, private librosService: LibrosService) { }
 
   ngOnInit(): void {
   }
@@ -35,4 +36,7 @@ export class BarraBusquedaComponent implements OnInit {
     this.txtBuscar.nativeElement.value = '';
   }
 
+  public crearLibro() {
+    this.router.navigate(['/crearlibro']);
+  }
 }

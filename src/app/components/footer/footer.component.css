@@ -1,0 +1,13 @@
+.footer {
+    font-family: 'Mate SC';
+    color:rgb(226, 192, 0);
+    background-color: rgb(90, 0, 23);
+    width: 100%;
+    margin: 0px;
+    padding: 20px;
+}
+
+.nombreCopy {
+    display: flex;
+    justify-content: center;
+}

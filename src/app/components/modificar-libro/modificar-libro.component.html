@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Crear nuevo libro</h2>
+    <h2>Modificar libro</h2>
     <form id="formularioGrupo" name="form" (ngSubmit)="onUpdate(); f.reset()" #f="ngForm" novalidate>
       <div class="form-group">
         <label for="title">Título del libro: </label>
@@ -20,8 +20,8 @@
       <div class="form-group">
         <label for="release">Fecha de lanzamiento: </label>
         <input type="text" class="form-control" name="release" [(ngModel)]="form.release" required autocomplete="off">
-        <p><span>NOTA:</span>El formato de la fecha de lanzamiento es el siguiente: &lt;mes abreviado&gt; &lt;día del mes&gt;, &lt;año&gt;</p>
-        <p><span>Ejemplo:</span>Oct 18, 2021</p>
+        <p><span class="importante">NOTA:</span>El formato de la fecha de lanzamiento es el siguiente: &lt;mes abreviado&gt; &lt;día del mes&gt;, &lt;año&gt;</p>
+        <p><span class="importante">Ejemplo:</span>Oct 18, 2021</p>
       </div>
       <div class="row">
         <div class="col-sm-6">

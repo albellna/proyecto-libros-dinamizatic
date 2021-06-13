@@ -7,10 +7,13 @@ import { DetallesLibroComponent } from './detalles-libro/detalles-libro.componen
 import { FooterComponent } from './footer/footer.component';
 import { ListadoLibrosComponent } from './listado-libros/listado-libros.component';
 import { ModificarLibroComponent } from './modificar-libro/modificar-libro.component';
+import { HeaderComponent } from './header/header.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
   declarations: [
+    HeaderComponent,
     BarraBusquedaComponent,
     CrearLibroComponent,
     DetallesLibroComponent,
@@ -19,12 +22,15 @@ import { ModificarLibroComponent } from './modificar-libro/modificar-libro.compo
     ModificarLibroComponent
   ],
   exports: [
+    HeaderComponent,
     ListadoLibrosComponent,
+    BarraBusquedaComponent,
     FooterComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ]
 })
 export class LibrosModule { }

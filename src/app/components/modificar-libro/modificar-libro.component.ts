@@ -31,8 +31,6 @@ export class ModificarLibroComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarDatos();
-    console.log(this.router.url);
-    
   }
 
   cargarDatos() {

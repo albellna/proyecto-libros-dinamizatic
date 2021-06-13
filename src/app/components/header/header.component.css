@@ -1,0 +1,20 @@
+.fondoCabecera {
+    background-color: rgb(90, 0, 23);
+}
+
+a {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    cursor: pointer;
+}
+
+.titulo {
+    font-family: 'Mate SC';
+    font-size: 60px;
+    text-align: center;
+    margin-top: 40px;
+    color:rgb(226, 192, 0);
+}

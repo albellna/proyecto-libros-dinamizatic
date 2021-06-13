@@ -1,0 +1,33 @@
+.importante {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button {
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    width: 100%;
+  }
+
+@media screen and (max-width: 440px) {
+  p {
+    font-size: 12px;
+  }
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Mate SC';
+  font-size: 50px;
+}
+
+input {
+  background-color: rgb(250, 242, 231);
+}

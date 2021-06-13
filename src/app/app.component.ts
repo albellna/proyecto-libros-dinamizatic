@@ -8,9 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'proyecto-libros-dynamizatic';
-  constructor(private router: Router) {}
+  constructor() {}
 
-  goHome() {
-    this.router.navigate(['/']);
-  }
+  
 }

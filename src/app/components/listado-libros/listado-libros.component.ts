@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {LibrosService} from 'src/app/services/libros.service';
 
 @Component({
@@ -10,21 +10,32 @@ import {LibrosService} from 'src/app/services/libros.service';
 export class ListadoLibrosComponent implements OnInit {
   
   libros: any[] = [];
-  mostrarGrupos: boolean = true;
+  mostrarLibros: boolean = true;
+  valorBusqueda: string = "";
+  p: number = 1;
 
-  @ViewChild('txtBuscar') txtBuscar!:ElementRef<HTMLInputElement>;
-
-  constructor(private librosService: LibrosService, private router: Router) {}
+  constructor(private activatedRoute: ActivatedRoute, private librosService: LibrosService, private router: Router) {}
 
   ngOnInit(): void {
-    this.cargarLibros();
+    this.activatedRoute.params.subscribe(response => {
+      this.valorBusqueda = response.valorBusqueda;
+    });
+
+    if (this.valorBusqueda != null){
+      this.librosService.buscarLibro(this.valorBusqueda).subscribe((data) => {
+          this.libros = data;
+          this.mostrarDatos();
+      });
+    } else {
+      this.cargarLibros();
+    }
   }
 
   public mostrarDatos() {
     if(this.libros.length != 0){
-      this.mostrarGrupos = true;
+      this.mostrarLibros = true;
     } else {
-      this.mostrarGrupos = false;
+      this.mostrarLibros = false;
     }
   }
 
@@ -39,18 +50,17 @@ export class ListadoLibrosComponent implements OnInit {
     );
   }
 
+
   public resultados(res: any){
     this.libros = res;
     this.mostrarDatos();
+    this.p = 1;
   }
 
   public detallesLibro(id: number) {
     this.router.navigate(['/libro', id]);
   }
 
-  public crearLibro() {
-    this.router.navigate(['/crearlibro']);
-  }
 
   public borrarLibro(id: string) {
     if (confirm('¿Quieres borrar el libro con ID '+id+'?')){

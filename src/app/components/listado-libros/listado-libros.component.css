@@ -1,0 +1,59 @@
+.crearLibro {
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+@media screen and (min-width: 801px) {
+    h2 {
+      font-size: 50px;
+    }
+}
+.tituloLibro {
+    font-family: 'Mate SC';
+}
+
+@media screen and (max-width: 800px) {
+    h2 {
+      font-size: 30px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+}
+
+.listado {
+    display: flex;
+    justify-content: center;
+}
+
+.datosLibros {
+    padding-bottom: 40px;
+}
+
+.barraBusqueda {
+    margin-bottom: 20px;
+}
+
+button {
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 100%;
+  }
+
+img {
+    width: 100px;
+    height: 150px;
+}
+
+pagination-controls {
+    display: flex;
+    justify-content: center;
+}

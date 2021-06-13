@@ -1,16 +1,22 @@
-<div>
-    <img src="{{libro.img}}" />
-    <h1 class="tituloBanda">{{libro.title}}</h1>
-    <h2>{{libro.subtitle}}</h2>
+<div class="row">
+    <div class="col-sm-2">
+        <img src="{{libro.img}}" />
+    </div>
+    <div class="col-sm-10 titulo">
+        <h1 class="tituloLibro">{{libro.title}}</h1>
+        <h2>{{libro.subtitle}}</h2>
+        <br />
+        <h4>{{libro.author}}</h4>
+    </div>
+</div>
+    
     <div>
-        <h3>Autor:</h3>
-        <p>{{libro.author}}</p>
+        
         <h3>Descripción:</h3>
         <p>{{libro.description}}</p>
         <h3>Fecha de lanzamiento:</h3>
         <p>{{libro.release}}</p>
     </div>
-</div>
 <div class="row botones">
     <div class="col-sm-6">
         <button (click)="modificarLibro(id)">Modificar datos</button>
