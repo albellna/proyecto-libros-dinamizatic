@@ -1,29 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BarraBusquedaComponent } from './components/barra-busqueda/barra-busqueda.component';
-import { CrearLibroComponent } from './components/crear-libro/crear-libro.component';
-import { DetallesLibroComponent } from './components/detalles-libro/detalles-libro.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ListadoLibrosComponent } from './components/listado-libros/listado-libros.component';
-import { ModificarLibroComponent } from './components/modificar-libro/modificar-libro.component';
+import { LibrosModule } from './components/libros.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BarraBusquedaComponent,
-    CrearLibroComponent,
-    DetallesLibroComponent,
-    FooterComponent,
-    ListadoLibrosComponent,
-    ModificarLibroComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LibrosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
