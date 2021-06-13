@@ -1,6 +1,6 @@
 {
-  "name": "proyecto-libros-dinamizatic",
-  "version": "0.0.0",
+  "name": "proyecto-libros-dynamizatic",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -1,1 +1,18 @@
-<p>listado-libros works!</p>
+<h1 class="titulo">Listado de libros</h1>
+<app-barra-busqueda (resultadoBusqueda)="resultados($event)"></app-barra-busqueda>
+<button class="crearLibro" (click)="crearLibro()">Crear nuevo libro</button>
+<hr>
+<div class="listado" *ngIf="mostrarGrupos; else sinDatos">
+    <div class="row">
+        <div class="col-sm-6 datosGrupos" *ngFor="let libro of libros">
+            <h2 class="tituloLibro">{{libro.title}}</h2> 
+                <p>{{libro.subtitle}}</p>
+                <p>{{libro.author}}</p>
+            <button (click)="detallesLibro(libro._id)">Ver detalles</button>
+            <button (click)="borrarLibro(libro._id)">Borrar</button>
+        </div>
+    </div>
+</div>
+<ng-template #sinDatos>
+    <h3>No hay resultados</h3>
+</ng-template>
