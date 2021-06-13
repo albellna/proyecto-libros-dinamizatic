@@ -35,7 +35,7 @@ export class LibrosService {
     }, cabecera);
   }
 
-  public crearGrupo(arg: any) {
+  public crearLibro(arg: any) {
     return this.http.post<Libro>(`${this.localAPI}/crearlibro`,{
       title: arg.title,
       subtitle: arg.subtitle,
@@ -44,5 +44,9 @@ export class LibrosService {
       release: arg.release,
       img: arg.img
     }, cabecera);
+  }
+
+  public borrarLibro(id: string) {
+    return this.http.delete<any>(`${this.localAPI}/borrarlibro/${id}`, cabecera);
   }
 }
