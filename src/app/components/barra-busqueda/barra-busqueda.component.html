@@ -1,0 +1,17 @@
+<div class="sinMargen row">
+    <div class="col-sm-8">
+        <input
+    type="text"
+    class="form-control"
+    placeholder="Buscar por nombre de grupo"
+    (keyup.enter)="buscar()"
+    #txtBuscar
+>
+    </div>
+    <div class="col-sm-2">
+        <button class="float-left" (click)="resetBusqueda()">Borrar búsqueda</button>
+    </div>
+    <div class="col-sm-2">
+        <button class="crearLibro float-right" (click)="crearLibro()">Crear nuevo libro</button>
+    </div>
+</div>

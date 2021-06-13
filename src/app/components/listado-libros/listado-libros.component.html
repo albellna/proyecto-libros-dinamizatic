@@ -1,0 +1,32 @@
+<div class="barraBusqueda">
+    <app-barra-busqueda (resultadoBusqueda)="resultados($event)"></app-barra-busqueda>
+</div>
+<div class="listado" *ngIf="mostrarLibros; else sinDatos">
+    <div class="row">
+        <div class="col-sm-6 datosLibros" *ngFor="let libro of libros | paginate: {itemsPerPage: 10, currentPage: p}">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img class="img-thumbnail" src="{{libro.img}}" />
+                </div>
+                <div class="col-sm-10">
+                    <h2 class="tituloLibro">{{libro.title | titlecase}}</h2> 
+                </div>
+            </div>
+            
+                <h3>{{libro.subtitle}}</h3>
+                <p>{{libro.author}}</p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button (click)="detallesLibro(libro._id)">Ver detalles</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button (click)="borrarLibro(libro._id)">Borrar</button>
+                    </div>
+                </div>
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+<ng-template #sinDatos>
+    <h3>No hay resultados</h3>
+</ng-template>

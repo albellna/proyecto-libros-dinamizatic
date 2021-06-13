@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Crear nuevo libro</h2>
+    <form id="formularioGrupo" name="form" (ngSubmit)="onCreate(); f.reset()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="title">Título del libro: </label>
+        <input type="text" class="form-control" name="title" [(ngModel)]="form.title" required autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="subtitle">Subtítulo del libro: </label>
+        <input type="text" class="form-control" name="subtitle" [(ngModel)]="form.subtitle" required autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="author">Autor: </label>
+        <input type="text" class="form-control" name="author" [(ngModel)]="form.author" required autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="description">Descripción: </label>
+        <textarea Input class="form-control" name="description" [(ngModel)]="form.description" required autocomplete="off"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="release">Fecha de lanzamiento: </label>
+        <input type="text" class="form-control" name="release" [(ngModel)]="form.release" required autocomplete="off">
+        <p><span>NOTA:</span>El formato de la fecha de lanzamiento es el siguiente: &lt;mes abreviado&gt; &lt;día del mes&gt;, &lt;año&gt;</p>
+        <p><span>Ejemplo:</span>Oct 18, 2021</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <button type="submit" [disabled]="!f.valid">Crear</button>
+        </div>
+        <div class="col-sm-6">
+          <button (click)="volverButton()">Volver</button>
+        </div>
+      </div>
+    </form>
+    <br>
+    <div *ngIf="falloCrear">
+      <p>Error al crear el libro</p>
+    </div>
+    <div *ngIf="creado">
+      <p>Libro creado correctamente</p>
+    </div>
+</div>
